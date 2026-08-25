@@ -150,8 +150,12 @@ Before starting, copy the complete image name supplied by the instructor. It sho
 ```text
 DOCKERHUB_USERNAME/crazyflie-gazebo-pd:latest
 ```
-
 The username, repository name and tag must all be correct.
+Eg: account name is yujietang in this experiment.So:
+
+```bash
+yujietang/crazyflie-gazebo-pd:latest
+```
 
 ## 1. Start Docker Desktop
 
