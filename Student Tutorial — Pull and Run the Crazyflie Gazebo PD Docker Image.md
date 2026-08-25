@@ -824,6 +824,27 @@ docker stop crazyflie_pd_demo
 
 ---
 
+# Observation table
+
+| Experiment | $K_p$ | $K_d$ | Response | Oscillation | Smoothness |
+|---|---:|---:|---|---|---|
+| Recommended | 2.0 | 2.8 |  |  |  |
+| Slow response | 0.5 | 1.0 |  |  |  |
+| Aggressive | 6.0 | 0.5 |  |  |  |
+| More damping | 6.0 | 4.0 |  |  |  |
+
+# Questions
+
+1. What happened when you increased $K_p$?
+2. What happened when you increased $K_d$?
+3. Which values produced the smoothest circle?
+4. Did the same values work equally well for the figure-eight?
+
+# Main conclusion
+
+> $K_p$ determines how strongly the Crazyflie follows the target. $K_d$ suppresses oscillation and makes the movement smoother.
+
+
 # Important Student Rule
 
 You do **not** need to clone the instructor's GitHub repository.
@@ -848,4 +869,6 @@ docker exec
 /start_demo.sh
       ↓
 Gazebo + Crazyflie PD experiment
+
+
 ```
