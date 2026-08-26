@@ -463,20 +463,26 @@ ros2 node list
 ros2 param set ...
 ```
 
-> **Important:** Do not copy the prompt itself. For example, type only `docker exec -it crazyflie_pd_demo bash`. Do not type `yujietang@TANGPC:/mnt/c/Users/t3426$` before it.
+> **Important:** open window linux system by type:
+> wsl
 
-## Terminal 1 — Main simulation terminal
 
-**Purpose:** This terminal creates the container and runs the simulation backend, ROS 2 nodes, controller, trajectory generator, and Gazebo server.
+Terminal 1 — Main Simulation Terminal
 
-From the WSL prompt, create the container using the command in Part 7. When the prompt changes to the Docker prompt, start the demo:
+Purpose: This terminal creates the Docker container and automatically starts the Crazyflie simulation backend, ROS 2 nodes, PD controller, trajectory generator, and Gazebo server.
 
+From the WSL prompt, run:
 ```bash
-cd /workspace
-./start_demo.sh
+docker run --rm -it \
+  --name crazyflie_pd_demo \
+  --network host \
+  --gpus all \
+  -e DISPLAY=$DISPLAY \
+  -e LIBGL_ALWAYS_SOFTWARE=1 \
+  -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
+  yujietang/crazyflie-gazebo-pd:latest
 ```
-
-Leave this terminal running. It displays the main simulation messages and errors.
+When you see the Crazyflie demo logs, the simulation is running. Keep Terminal 1 open. You will not get a command prompt in this terminal while the simulation is running.
 
 Do not use this terminal to change parameters while the launch process is occupying it. Pressing `Ctrl + C` here stops the main simulation.
 
