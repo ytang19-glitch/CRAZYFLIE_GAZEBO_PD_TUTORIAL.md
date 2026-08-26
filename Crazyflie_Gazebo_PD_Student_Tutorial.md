@@ -140,9 +140,9 @@ Important: Run wsl only from Windows PowerShell. Do not type wsl again after ent
 ## Step 1: Check for an old container
 
 Before creating the container, check whether a container named crazyflie_pd_demo already exists:
-
+```bash
 docker ps -a --filter name=crazyflie_pd_demo
-
+```
 If no container appears, continue to Step 2.
 
 If the container already exists, remove it:
