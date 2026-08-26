@@ -374,37 +374,6 @@ This means you are now **inside the Docker container**.
 
 ---
 
-# Part 8 — Start the Crazyflie Simulation
-
-Inside the Docker container, run:
-
-```bash
-/start_demo.sh
-```
-
-If the image uses the script from `/workspace`, the command may instead be:
-
-```bash
-cd /workspace
-./start_demo.sh
-```
-
-The script should start:
-
-```text
-ROS 2
-Gazebo
-Crazyflie model
-trajectory node
-PD controller
-ROS ↔ Gazebo bridge
-```
-
-Gazebo should open in a separate window.
-
-You should see the Crazyflie attempting to follow the reference trajectory.
-
----
 
 # Part 9 — Why Three Terminals Are Used
 
