@@ -126,7 +126,36 @@ After the image is downloaded, use the following four terminals.
 
 ---
 
-# Terminal 1 — Run Docker and the Main Simulation
+# Terminal 1 — Run Docker and the main simulation
+
+Purpose: Start the container, Gazebo server, ROS 2 nodes, trajectory generator, and PD controller.
+
+First, confirm that you are inside WSL Ubuntu. Your prompt should look similar to:
+```bash
+yujietang@TANGPC:~$
+```
+
+Important: Run wsl only from Windows PowerShell. Do not type wsl again after entering Ubuntu.
+
+## Step 1: Check for an old container
+
+Before creating the container, check whether a container named crazyflie_pd_demo already exists:
+
+docker ps -a --filter name=crazyflie_pd_demo
+
+If no container appears, continue to Step 2.
+
+If the container already exists, remove it:
+```bash
+docker rm -f crazyflie_pd_demo
+```
+This prevents the following error:
+
+Conflict. The container name "/crazyflie_pd_demo" is already in use.
+
+Removing the old container does not remove the downloaded Docker image. You do not need to pull the image again.
+
+## Step 2: Run the container and simulation
 
 **Purpose:** Start the container, Gazebo server, ROS 2 nodes, trajectory generator, and PD controller.
 
@@ -147,7 +176,7 @@ Keep Terminal 1 open. Pressing `Ctrl+C` here stops the simulation.
 
 ---
 
-# Terminal 2 — Open the Gazebo Window
+# Terminal 3 — Open the Gazebo Window
 
 **Purpose:** Display the Crazyflie simulation.
 
@@ -178,7 +207,7 @@ Keep Terminal 2 open while using the Gazebo window.
 
 ---
 
-# Terminal 3 — Set Kp and Kd
+# Terminal 4 — Set Kp and Kd
 
 **Purpose:** Change the PD controller gains while the simulation is running.
 
@@ -216,7 +245,7 @@ Set parameter successful
 
 ---
 
-# Terminal 4 — Debug the Simulation
+# Terminal 5 — Debug the Simulation
 
 **Purpose:** Check the container, ROS 2 nodes, topics, drone position, and controller output.
 
