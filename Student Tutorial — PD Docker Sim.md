@@ -330,6 +330,9 @@ If WSLg is working correctly, you normally do not need to install an additional 
 
 Students should run the container from **WSL Ubuntu**, not from inside Docker Desktop.
 
+```bash
+wsl
+```
 Open Ubuntu.
 
 First make sure the image exists:
