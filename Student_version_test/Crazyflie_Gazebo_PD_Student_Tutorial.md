@@ -119,7 +119,7 @@ yujietang@TANGPC:~$
 From the WSL prompt, run:
 
 ```bash
-docker pull yujietang/crazyflie-gazebo-pd:latest
+docker pull yujietang/crazyflie-gazebo-pd:v3
 ```
 
 After the image is downloaded, use the following four terminals.
@@ -169,7 +169,7 @@ docker run --rm -it \
   -e DISPLAY=$DISPLAY \
   -e LIBGL_ALWAYS_SOFTWARE=1 \
   -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
-  yujietang/crazyflie-gazebo-pd:latest
+  yujietang/crazyflie-gazebo-pd:v3
 ```
 
 Keep Terminal 1 open. Pressing `Ctrl+C` here stops the simulation.
