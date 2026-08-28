@@ -79,7 +79,19 @@ If this page is missing, make sure Docker Desktop is using Linux containers.
 
 ## 4. Test Docker from WSL
 
-Open Ubuntu and run:
+Open Ubuntu 
+
+get into powershell and run:
+
+```bash
+wsl
+```
+
+
+
+
+
+and run:
 
 ```bash
 docker version
